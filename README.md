@@ -71,13 +71,12 @@ It allows you to dynamically create different chess pieces and calculate their p
    <br>
    O/P - G3 , H3 , F3 , F2 , H2 , F1 , G1 , H1
    <br>
-4. ![Screenshot 2025-01-20 at 8.50.49 PM.png](../../../../var/folders/q1/j8fms90j1558_ccpz7y1g8vm0000gn/T/TemporaryItems/NSIRD_screencaptureui_0vcHU6/Screenshot%202025-01-20%20at%208.50.49%E2%80%AFPM.png)
+    <img width="452" alt="Screenshot 2025-01-20 at 11 26 32 PM" src="https://github.com/user-attachments/assets/e00ed8d3-7f35-450a-994c-9eb1b065716c" />
    <br>
 
 4. I/P - Queen , G2
    <br>
    O/P - G3, G4 , G5 , G6, G7, G8 , H3 , F3 , E4 , D5 , C6 , B7 , A8, F2 ,E2 , D2, C2 ,B2 ,A2,H2,F1,G1,H1
    <br>
-   
-   ![Screenshot 2025-01-20 at 8.50.25 PM.png](../../../../var/folders/q1/j8fms90j1558_ccpz7y1g8vm0000gn/T/TemporaryItems/NSIRD_screencaptureui_0BYIuM/Screenshot%202025-01-20%20at%208.50.25%E2%80%AFPM.png)
+    <img width="815" alt="Screenshot 2025-01-20 at 11 27 07 PM" src="https://github.com/user-attachments/assets/e06ac34d-a4f7-4b04-8ddf-bb162939d506" />
    <br>
