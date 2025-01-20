@@ -35,6 +35,11 @@ It allows you to dynamically create different chess pieces and calculate their p
   https://github.com/aakritisaxena/Chess.git
 2. Build the code in any compiler and run
 
+**Expected Inputs**
+1. Enter the piece type on the console when prompted (Pawn/King/Queen)
+2. Enter the valid position of the piece on the chess board.(A1-A8,H1-H8)
+3. If valid position is not entered, the project gives the exception as PositionNotPossible.
+
 **Sample Input and Outputs**
 
 1. I/P - Pawn , G2
