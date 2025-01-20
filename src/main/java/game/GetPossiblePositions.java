@@ -9,24 +9,24 @@ import main.java.game.util.ColumnNames;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Game {
+public class GetPossiblePositions {
     public static void main(String[] args) {
 
         int size = 8;
-        //Inputs the type (For eg "King")
+        //Inputs the type (For eg "Queen")
         Scanner inputType = new Scanner(System.in);
         System.out.println("Enter Type");
         String type = inputType.nextLine();
 
-        //Inputs the position (For eg "G2")
+        //Inputs the position (For eg "K2")
         System.out.println("Enter Position");
         String position = inputType.nextLine();
         char[] posArray = position.toCharArray();
 
-        //Converts the Aplhabet to column
+        //Converts the Alphabet to column
         Character columnAsChar = posArray[0];
         Integer columnAsInt = convertColumnFromCharToInteger(columnAsChar);
-        Integer row = Integer.parseInt(String.valueOf(posArray[1]));
+        int row = Integer.parseInt(String.valueOf(posArray[1]));
 
         if(row > size){
             throw new PositionNotPossibleException("Position is out of bounds");
@@ -35,7 +35,8 @@ public class Game {
         PieceFactory pieceFactory = new PieceFactory();
         try {
             Piece piece = pieceFactory.getPiece(type);
-            piece.getMovesForAllCoordinates(size, row, columnAsInt, piece.getAllPossibleCoordinates(type));
+            System.out.println("All possible moves for "+ type +" are: ");
+            piece.getMovesForAllCoordinates(size, row, columnAsInt, piece.getAllPossibleMoves(type));
         } catch (MoveNotPossibleException e) {
             e.printStackTrace();
         }

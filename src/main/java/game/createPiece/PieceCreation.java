@@ -4,5 +4,5 @@ import main.java.game.chessPiece.Piece;
 
 public interface PieceCreation {
 
-    public Piece createPiece();
+     Piece createPiece();
 }

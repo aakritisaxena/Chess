@@ -5,31 +5,29 @@ import java.util.List;
 import main.java.game.exception.MoveNotPossibleException;
 
 import main.java.game.util.ColumnNames;
-import main.java.game.util.Coordinates;
+import main.java.game.util.PossibleDirections;
 
 public interface Piece {
 
-    public  boolean isValidPosition(int n, int row, int column);
 
-
-    default List<String> getMovesForAllCoordinates(int i, int row, int column, List<Coordinates>possibleCoordinates) throws MoveNotPossibleException {
+    default List<String> getMovesForAllCoordinates(int i, int row, int column, List<PossibleDirections>possibleCoordinates) throws MoveNotPossibleException {
         List<String> moves = new ArrayList<>();
-        for (Coordinates coordinate : possibleCoordinates) {
+        for (PossibleDirections coordinate : possibleCoordinates) {
             getAllMovesByCoordinates(row, column, coordinate.getRow(), coordinate.getCol(), moves);
         }
         return moves;
     }
 
     default void getAllMovesByCoordinates(int row, int column, int rowInc, int columnInc, List<String> finalTypeMoves) throws MoveNotPossibleException {
-        List<Coordinates> typeMoveList = findAllMovesByCoordinates(8, row, column,rowInc,columnInc);
-        addMovesToTheList(finalTypeMoves, typeMoveList);
+        List<PossibleDirections> list = findAllMovesByCoordinates(8, row, column,rowInc,columnInc);
+        addMovesToResult(finalTypeMoves, list);
     }
 
-    public  List<Coordinates> findAllMovesByCoordinates(int n, int row, int column, int rowInc, int columnInc) throws MoveNotPossibleException ;
+    public  List<PossibleDirections> findAllMovesByCoordinates(int n, int row, int column, int rowInc, int columnInc) throws MoveNotPossibleException ;
 
 
-    default void addMovesToTheList(List<String> finalTypeMoves, List<Coordinates> typeList) {
-        for (Coordinates coordinate :  typeList) {
+    default void addMovesToResult(List<String> finalTypeMoves, List<PossibleDirections> typeList) {
+        for (PossibleDirections coordinate :  typeList) {
             Integer columnMapping = coordinate.getCol();
             String  columnToMove =  new ColumnNames().getColumnMappings().get(columnMapping);
             System.out.println(columnToMove + coordinate.getRow());
@@ -37,14 +35,14 @@ public interface Piece {
         }
     }
 
-    default List<Coordinates> getAllPossibleCoordinates(String pieceType) {
-        List<Coordinates> allPossibleCordinates = new Coordinates().getListOfValidCoordinates();
+    default List<PossibleDirections> getAllPossibleMoves(String pieceType) {
+        List<PossibleDirections> allPossibleCoordinates = new PossibleDirections().getListOfValidCoordinates();
         if (pieceType.equalsIgnoreCase("pawn")) {
-            List<Coordinates> pawnCoridnates = new ArrayList<>();
-            pawnCoridnates.add(allPossibleCordinates.get(0));
-            return pawnCoridnates;
+            List<PossibleDirections> pawnCoordinates = new ArrayList<>();
+            pawnCoordinates.add(allPossibleCoordinates.get(0));
+            return pawnCoordinates;
         }
-        return allPossibleCordinates;
+        return allPossibleCoordinates;
     }
 
 }

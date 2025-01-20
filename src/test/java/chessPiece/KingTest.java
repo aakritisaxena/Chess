@@ -8,14 +8,14 @@ import org.junit.Test;
 
 import main.java.game.chessPiece.Piece;
 import main.java.game.createPiece.PieceFactory;
-import main.java.game.util.Coordinates;
+import main.java.game.util.PossibleDirections;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class KingTest {
 
-    List<Coordinates> possibleCordinates;
+    List<PossibleDirections> possibleCordinates;
 
     private PieceFactory pieceFactory;
 
@@ -25,7 +25,7 @@ public class KingTest {
     public void setUp() {
         pieceFactory = new PieceFactory();
         piece = pieceFactory.getPiece("King");
-        possibleCordinates = new Coordinates().getListOfValidCoordinates();
+        possibleCordinates = new PossibleDirections().getListOfValidCoordinates();
     }
 
     @Test
