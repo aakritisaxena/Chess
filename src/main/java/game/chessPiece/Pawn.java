@@ -12,7 +12,7 @@ public class Pawn implements Piece {
     @Override
     public List<PossibleDirections> findAllMovesByCoordinates(int n, int row, int column, int rowInc, int columnInc) throws MoveNotPossibleException {
         List<PossibleDirections> moves = new ArrayList<>();
-        if (row <=n && row >=1 && column <=n && column >=1) {
+        if (row <n && row >1 && column <n && column >1) {
             PossibleDirections c = new PossibleDirections();
             row += rowInc;
             column += columnInc;
