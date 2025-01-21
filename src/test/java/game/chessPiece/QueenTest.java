@@ -1,8 +1,9 @@
-package test.java.chessPiece;
+package test.java.game.chessPiece;
 
 import main.java.game.chessPiece.Piece;
 import main.java.game.createPiece.PieceFactory;
 import main.java.game.exception.MoveNotPossibleException;
+import main.java.game.exception.PieceNotConfiguredException;
 import main.java.game.util.PossibleDirections;
 import org.junit.After;
 import org.junit.Assert;
@@ -19,7 +20,7 @@ public class QueenTest {
     List<PossibleDirections> possibleCordinates;
 
     @Before
-    public void setUp() {
+    public void setUp() throws PieceNotConfiguredException {
         pieceFactory = new PieceFactory();
         piece = pieceFactory.getPiece("Queen");
         possibleCordinates = new PossibleDirections().getListOfValidCoordinates();

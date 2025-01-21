@@ -3,6 +3,7 @@ package main.java.game;
 import main.java.game.chessPiece.Piece;
 import main.java.game.createPiece.PieceFactory;
 import main.java.game.exception.MoveNotPossibleException;
+import main.java.game.exception.PieceNotConfiguredException;
 import main.java.game.exception.PositionNotPossibleException;
 import main.java.game.util.ColumnNames;
 
@@ -28,7 +29,7 @@ public class GetPossiblePositions {
         Integer columnAsInt = convertColumnFromCharToInteger(columnAsChar);
         int row = Integer.parseInt(String.valueOf(posArray[1]));
 
-        if(row > size){
+        if(row > size || row < 1){
             throw new PositionNotPossibleException("Position is out of bounds");
         }
 
@@ -39,8 +40,10 @@ public class GetPossiblePositions {
             piece.getMovesForAllCoordinates(size, row, columnAsInt, piece.getAllPossibleMoves(type));
         } catch (MoveNotPossibleException e) {
             e.printStackTrace();
+        } catch (PieceNotConfiguredException e) {
+            throw new RuntimeException(e);
         }
-        
+
     }
 
     private static Integer convertColumnFromCharToInteger(Character columnAsChar) throws PositionNotPossibleException {
