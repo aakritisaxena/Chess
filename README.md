@@ -49,7 +49,9 @@ It allows you to dynamically create different chess pieces and calculate their p
    For any given square there are possible 8 directions in which it can move. 
    These 8 directions are defined in this class
    <BR>
- ![Screenshot 2025-01-20 at 3.35.29 PM.png](../../../../var/folders/q1/j8fms90j1558_ccpz7y1g8vm0000gn/T/TemporaryItems/NSIRD_screencaptureui_CnurUx/Screenshot%202025-01-20%20at%203.35.29%E2%80%AFPM.png)
+    <img width="439" alt="Screenshot 2025-01-21 at 9 26 54 AM" src="https://github.com/user-attachments/assets/3cb1c94f-21b9-4601-aaa2-694e4b138b89" />
+    <BR>
+
    
 **Sample Input and Outputs**
 
